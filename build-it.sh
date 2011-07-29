@@ -16,7 +16,12 @@ USE_PREBUILT="$MY_HOME/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
 ANY_MODULES="$MY_HOME/any-kernel/system/lib/modules"
 ANY_KERNEL="$MY_HOME/any-kernel/kernel"
 ANY_KERNEL_HOME="$MY_HOME/any-kernel"
+PLACEHOLDER="$ANY_MODULES/PLACEHOLDER"
 DATE=$(date +%m%d%Y)
+
+if [ -f $PLACEHOLDER ]; then
+	rm $PLACEHOLDER
+fi
 
 if [ -f $MY_HOME/.config ]; then
 	echo "[x] .config"
