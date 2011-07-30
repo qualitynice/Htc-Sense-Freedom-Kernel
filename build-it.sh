@@ -23,6 +23,7 @@ if [ -f $PLACEHOLDER ]; then
 	rm $PLACEHOLDER
 fi
 
+cp $MY_HOME/arch/arm/lithid_supersonic_defconfig $MY_HOME/.config
 if [ -f $MY_HOME/.config ]; then
 	echo "[x] .config"
 else
@@ -39,8 +40,6 @@ else
 	exit 97
 fi
 }
-
-cp $MY_HOME/arch/arm/lithid_supersonic_defconfig $MY_HOME/.config
 
 sed "s/CONFIG_LOCALVERSION=".*"/CONFIG_LOCALVERSION="\"$1\""/g" .config > tmp
 mv tmp .config
