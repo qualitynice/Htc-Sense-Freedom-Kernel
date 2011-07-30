@@ -1,0 +1,15 @@
+Freedom Kernel Project for Sense
+==============
+
+Developers:
+------------
+* Supersonic (EVO): Lithid
+
+CHANGELOG
+------------
+v0.1
+
+* Initial Release
+* Based off of latest HTC EVO 4G – GB MR – 2.6.35 kernel source code
+* Enabled powersave governor
+* Added smartass governor
