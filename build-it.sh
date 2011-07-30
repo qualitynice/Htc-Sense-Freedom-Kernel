@@ -40,14 +40,7 @@ else
 fi
 }
 
-echo "Cleaning the build"
-make clean |grep -v "arm-eabi-gcc:"
-echo "Cleaning the any-kernel modules"
-rm $ANY_MODULES/*.ko &>> /dev/null
-echo "Cleaning the any-kernel zimage"
-rm $ANY_KERNEL/zImage &>> /dev/null
-echo "Cleaning the auto-sign folder"
-rm $AUTO_SIGN/*.zip &>> /dev/null
+cp $MY_HOME/arch/arm/lithid_supersonic_defconfig $MY_HOME/.config
 
 sed "s/CONFIG_LOCALVERSION=".*"/CONFIG_LOCALVERSION="\"$1\""/g" .config > tmp
 mv tmp .config
@@ -91,5 +84,13 @@ cd $MY_HOME
 FINAL_INSTALL_ZIP=$(find $HOME -iname $THIS_ZIP_SIGNED)
 echo ""
 echo "Your file is located: $FINAL_INSTALL_ZIP"
+make distclean
+
+echo "Cleaning the any-kernel modules"
+rm $ANY_MODULES/*.ko &>> /dev/null
+echo "Cleaning the any-kernel zimage"
+rm $ANY_KERNEL/zImage &>> /dev/null
+echo "Cleaning the auto-sign folder"
+rm $AUTO_SIGN/*.zip &>> /dev/null
 
 exit
