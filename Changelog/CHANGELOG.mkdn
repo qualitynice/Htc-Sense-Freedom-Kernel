@@ -8,9 +8,9 @@ Developers:
 CHANGELOG
 ------------
 v0.2
-* Overclocked to 1.19Ghz Max
-* Disabled Perflock
-* Minor Min/Max voltage tweeks
+*Overclocked to 1.19Ghz Max
+*Disabled Perflock
+*Minor Min/Max voltage tweeks
 
 ------------
 v0.1
