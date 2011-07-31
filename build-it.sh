@@ -91,5 +91,6 @@ echo "Cleaning the any-kernel zimage"
 rm $ANY_KERNEL/zImage &>> /dev/null
 echo "Cleaning the auto-sign folder"
 rm $AUTO_SIGN/*.zip &>> /dev/null
+touch $MY_HOME/any-kernel/system/lib/modules/PLACEHOLDER
 
 exit
