@@ -1,58 +1,6 @@
 Freedom Kernel Project for Sense
 ==============
 
-Visit http://www.salvage-mod.com
-
-Developers:
-------------
-* Supersonic (EVO): Lithid, barnacles10, echoside
-
-CHANGELOG
-------------
-v1.4
-
-* Add option to disable stock voicemail notifications
-* Advanced camera options. (Vol up/down snap, Vol up/down Zoom)
-* Fixed reboot dialog bug
-* Using latest gps libs
-* Added init.d support, for running scripts on boot
-* Added Devtools to SalvageParts
-* Added SpareParts to SalvageParts
-* Fixed extra updater-script commands being seen
-* Fixed live wallpaper issue
-* Added screenshot app
-* Added screeny script to /system/bin for screenshots via adb
-* Toggle transparent notification drop down.
-* Added new screenshot widget for notification dropdown
-
-------------
-v1.3
-
-* Rebase - Android 2.3.4 
-* Changed WiMAX status bar icons
-* Change WiMAX Settings --joeykrim
-* Change brightness by sliding across the status bar
-* Toggle wallpaper scrolling
-* Toggle Launcher rotation
-* Added lockscreen music controls
-* Imported lockscreen settings from CMParts
-** Lense
-** Rotary
-** Revamped Rotary
-** Plus extra settings
-* Changed default kernel to Titamat 3.3.8
-* Now supports Flac
-* Added chat bubble option to Mms
-* Optimization for SalvageMod Wallpapers
-* Optimization for Settings and SalvageParts
-* Added option to change how many screens on Launcher2
-** 3
-** 5
-** 7
-* Custom updater-script header
-* Revert back to 3D Gallery
-
-
 Developers:
 ------------
 * Supersonic (EVO): Lithid
@@ -60,12 +8,14 @@ Developers:
 CHANGELOG
 ------------
 v0.2
+
 *Overclocked to 1.19Ghz Max
 *Disabled Perflock
 *Minor Min/Max voltage tweeks
 
 ------------
 v0.1
+
 * Initial Release
 * Based off of latest HTC EVO 4G – GB MR – 2.6.35 kernel source code
 * Enabled powersave governor
