@@ -11,10 +11,8 @@ v0.2
 * Overclocked to 1.19Ghz Max
 * Disabled Perflock
 * Minor Min/Max voltage tweeks
-------------
 v0.1
 * Initial Release
 * Based off of latest HTC EVO 4G – GB MR – 2.6.35 kernel source code
 * Enabled powersave governor
 * Added smartass governor
-------------
