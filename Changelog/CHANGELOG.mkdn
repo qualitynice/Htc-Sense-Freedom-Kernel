@@ -7,7 +7,7 @@ Developers:
 
 CHANGELOG
 ------------
-v0.2
+v0.4
 
 * Dropped voltages about 50 per frequency
 * Changed cpu speed at boot time to 768Mhz
