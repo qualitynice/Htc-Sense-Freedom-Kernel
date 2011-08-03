@@ -58,7 +58,7 @@ cd $MY_HOME
 
 function universal_updater_script(){
 rm $ANY_KERNEL_UPDATER_SCRIPT
-(cat << EOF) > $ANY_KERNEL_UPDATER_SCRIPT
+(cat << EOF) | sed s/_VER_/$1/g> $ANY_KERNEL_UPDATER_SCRIPT
 ui_print("");
 ui_print("");
 ui_print("");
@@ -92,7 +92,7 @@ ui_print("");
 ui_print("");
 ui_print("");
 ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-ui_print("FREEDOM KERNEL               Version: Universal");
+ui_print("FREEDOM KERNEL _VER_         Version: Universal");
 ui_print("Developed by: Lithid         Device: HTC Evo 4g");
 ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 ui_print("");
@@ -137,7 +137,7 @@ EOF
 
 function syn_nightly_updater_script(){
 rm $ANY_KERNEL_UPDATER_SCRIPT
-(cat << EOF) > $ANY_KERNEL_UPDATER_SCRIPT
+(cat << EOF) | sed s/_VER_/$1/g> $ANY_KERNEL_UPDATER_SCRIPT
 ui_print("");
 ui_print("");
 ui_print("");
@@ -171,7 +171,7 @@ ui_print("");
 ui_print("");
 ui_print("");
 ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-ui_print("FREEDOM KERNEL         Version: Synergy Nightly");
+ui_print("FREEDOM KERNEL _VER_   Version: Synergy Nightly");
 ui_print("Developed by: Lithid         Device: HTC Evo 4g");
 ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 ui_print("");
@@ -217,7 +217,7 @@ EOF
 
 function synergy_godmode_updater_script(){
 rm $ANY_KERNEL_UPDATER_SCRIPT
-(cat << EOF) > $ANY_KERNEL_UPDATER_SCRIPT
+(cat << EOF) | sed s/_VER_/$1/g> $ANY_KERNEL_UPDATER_SCRIPT
 ui_print("");
 ui_print("");
 ui_print("");
@@ -251,7 +251,7 @@ ui_print("");
 ui_print("");
 ui_print("");
 ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-ui_print("FREEDOM KERNEL         Version: Synergy Godmode");
+ui_print("FREEDOM KERNEL _VER_   Version: Synergy Godmode");
 ui_print("Developed by: Lithid         Device: HTC Evo 4g");
 ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 ui_print("");
@@ -380,7 +380,7 @@ fi
 
 }
 
-sed "s/CONFIG_LOCALVERSION=".*"/CONFIG_LOCALVERSION="\"$1\""/g" .config > tmp
+sed "s/CONFIG_LOCALVERSION=".*"/CONFIG_LOCALVERSION="\"-Freedom-$1\""/g" .config > tmp
 mv tmp .config
 
 echo "Using pre-built tool: $USE_PREBUILT"
