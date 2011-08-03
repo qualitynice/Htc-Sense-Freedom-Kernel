@@ -4,7 +4,7 @@
 if [ $# -ne 1 ]; then
 	echo "Written by Lithid"
         echo "[Error]: Expected 1 parameter, got $#."
-        echo "Usage: sh build-it.sh v# [BUILD VERSION]"
+        echo "Usage: bash build-it.sh v# [BUILD VERSION]"
         exit 99
 else
 	echo "[x] $1"
@@ -59,56 +59,56 @@ cd $MY_HOME
 function universal_updater_script(){
 rm $ANY_KERNEL_UPDATER_SCRIPT
 (cat << EOF) > $ANY_KERNEL_UPDATER_SCRIPT
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");'
-'ui_print("FREEDOM KERNEL               Version: Universal");'
-'ui_print("Developed by: Lithid         Device: HTC Evo 4g");'
-'ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");'
-'ui_print("");'
-'ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");'
-'ui_print("     Using: AnyKernel Updater by Koush.");'
-'ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+ui_print("FREEDOM KERNEL               Version: Universal");
+ui_print("Developed by: Lithid         Device: HTC Evo 4g");
+ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+ui_print("");
+ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+ui_print("     Using: AnyKernel Updater by Koush.");
+ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
 set_progress(1.000000); 
 ui_print("Extracting System Files...");
 mount("MTD", "system", "/system");
@@ -138,56 +138,56 @@ EOF
 function syn_nightly_updater_script(){
 rm $ANY_KERNEL_UPDATER_SCRIPT
 (cat << EOF) > $ANY_KERNEL_UPDATER_SCRIPT
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");'
-'ui_print("FREEDOM KERNEL         Version: Synergy Nightly");'
-'ui_print("Developed by: Lithid         Device: HTC Evo 4g");'
-'ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");'
-'ui_print("");'
-'ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");'
-'ui_print("     Using: AnyKernel Updater by Koush.");'
-'ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+ui_print("FREEDOM KERNEL         Version: Synergy Nightly");
+ui_print("Developed by: Lithid         Device: HTC Evo 4g");
+ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+ui_print("");
+ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+ui_print("     Using: AnyKernel Updater by Koush.");
+ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
 set_progress(1.000000); 
 mount("MTD", "userdata", "/data");
 package_extract_dir("data", "/data");
@@ -218,56 +218,56 @@ EOF
 function synergy_godmode_updater_script(){
 rm $ANY_KERNEL_UPDATER_SCRIPT
 (cat << EOF) > $ANY_KERNEL_UPDATER_SCRIPT
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");'
-'ui_print("FREEDOM KERNEL         Version: Synergy Godmode");'
-'ui_print("Developed by: Lithid         Device: HTC Evo 4g");'
-'ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");'
-'ui_print("");'
-'ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");'
-'ui_print("     Using: AnyKernel Updater by Koush.");'
-'ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
-'ui_print("");'
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+ui_print("FREEDOM KERNEL         Version: Synergy Godmode");
+ui_print("Developed by: Lithid         Device: HTC Evo 4g");
+ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+ui_print("");
+ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+ui_print("     Using: AnyKernel Updater by Koush.");
+ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
 set_progress(1.000000); 
 ui_print("Extracting System Files...");
 run_program("/sbin/busybox", "mkdir", "/system0");
