@@ -494,7 +494,7 @@ static void __init acpuclk_init(void)
 		if (speed->acpu_khz == 768000)
 			break;
 		if (speed->acpu_khz == 0) {
-			pr_err("acpuclk_init: cannot find 806MHz\n");
+			pr_err("acpuclk_init: cannot find 768MHz\n");
 			BUG();
 		}
 		speed++;
