@@ -11,6 +11,7 @@ else
 fi
 
 MY_HOME=$(pwd)
+VERSION="$1"
 MY_CONFIG="lithid_supersonic_defconfig"
 AUTO_SIGN="$MY_HOME/prebuilt/auto-sign"
 USE_PREBUILT="$MY_HOME/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-"
@@ -58,7 +59,7 @@ cd $MY_HOME
 
 function universal_updater_script(){
 rm $ANY_KERNEL_UPDATER_SCRIPT
-(cat << EOF) | sed s/_VER_/$1/g> $ANY_KERNEL_UPDATER_SCRIPT
+(cat << EOF) | sed s/_VER_/$VERSION/g > $ANY_KERNEL_UPDATER_SCRIPT
 ui_print("");
 ui_print("");
 ui_print("");
@@ -137,7 +138,7 @@ EOF
 
 function syn_nightly_updater_script(){
 rm $ANY_KERNEL_UPDATER_SCRIPT
-(cat << EOF) | sed s/_VER_/$1/g> $ANY_KERNEL_UPDATER_SCRIPT
+(cat << EOF) | sed s/_VER_/$VERSION/g > $ANY_KERNEL_UPDATER_SCRIPT
 ui_print("");
 ui_print("");
 ui_print("");
@@ -217,7 +218,7 @@ EOF
 
 function synergy_godmode_updater_script(){
 rm $ANY_KERNEL_UPDATER_SCRIPT
-(cat << EOF) | sed s/_VER_/$1/g> $ANY_KERNEL_UPDATER_SCRIPT
+(cat << EOF) | sed s/_VER_/$VERSION/g > $ANY_KERNEL_UPDATER_SCRIPT
 ui_print("");
 ui_print("");
 ui_print("");
