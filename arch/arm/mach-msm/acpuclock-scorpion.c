@@ -491,7 +491,7 @@ static void __init acpuclk_init(void)
 	 */
 	speed = acpu_freq_tbl;
 	for (;;) {
-		if (speed->acpu_khz == 806400)
+		if (speed->acpu_khz == 768000)
 			break;
 		if (speed->acpu_khz == 0) {
 			pr_err("acpuclk_init: cannot find 806MHz\n");
