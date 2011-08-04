@@ -27,9 +27,9 @@
 #include <mach/board.h>
 #include <asm/mach-types.h>
 #include <mach/board_htc.h>
-#include <mach/htc_battery_sysfs.h>
 #include <mach/msm_fb.h> /* Jay, to register display notifier */
 #include <mach/htc_battery.h>
+#include <mach/htc_battery_sysfs.h>
 #include <linux/rtc.h>
 #include <linux/workqueue.h>
 #include <linux/tps65200.h>
@@ -730,6 +730,7 @@ static int htc_get_batt_info(struct battery_info_reply *buffer)
 	} rep;
 
 	int rc;
+	int full_bat_value;
 
 	if (buffer == NULL)
 		return -EINVAL;
@@ -1008,16 +1009,14 @@ static int htc_set_smem_cable_type(u32 cable_type)
 	return 0;
 }
 #endif
-#ifndef CONFIG_HTC_BATTCHG_SMEM
+#ifdef CONFIG_HTC_BATTCHG_SMEM
 static ssize_t htc_battery_show_batt_attr(struct device *dev,
 					 struct device_attribute *attr,
 					 char *buf)
 {
 	switch (htc_batt_info.guage_driver) {
 	case GUAGE_MODEM:
-#ifdef CONFIG_HTC_BATTCHG_SMEM
 		return htc_battery_show_smem(dev, attr, buf);
-#endif
 		break;
 	case GUAGE_DS2784:
 	case GUAGE_DS2746:
@@ -1100,15 +1099,16 @@ static int htc_battery_get_charging_status(void)
 		if ((htc_charge_full) && (htc_batt_info.rep.full_level == 100)) {
 			htc_batt_info.rep.level = 100;
 		}
-		if (sbc_status(SBC_STATE)) {
+		if (sbc_status(SBC_STATE))
 			smem_batt_info->charging_enabled = htc_batt_info.rep.charging_enabled;		
 		level = htc_batt_info.rep.level;
 		if (!sbc_status(SBC_STATE)) {
 			if (level == 100){
 				htc_charge_full = 1;}
-		else
+		} else {
 			if ((level == 100) && (htc_batt_info.rep.batt_vol >= 4193))
 				htc_charge_full = 1;
+		}
 
 		if (htc_charge_full && !sbc_status(SBC_STATE))
 			ret = POWER_SUPPLY_STATUS_FULL;
@@ -1514,7 +1514,7 @@ static int update_batt_info(void)
 		}
 #endif
 		break;
-#elif defined(CONFIG_BATTERY_DS2746)
+#if defined(CONFIG_BATTERY_DS2746)
 	case GUAGE_DS2746:
 		if (ds2746_get_battery_info(&htc_batt_info.rep)) {
 			BATT_ERR("%s: ds2746 read failed!!!", __func__);
