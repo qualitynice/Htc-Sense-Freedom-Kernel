@@ -10,6 +10,7 @@ CHANGELOG
 v0.5
 
 * Add support for voice call recording
+* Audio tweaks, make volume slightly louder
 
 ------------
 v0.4
