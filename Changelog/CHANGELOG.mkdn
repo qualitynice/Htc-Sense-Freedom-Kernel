@@ -12,6 +12,7 @@ v0.5
 * Add support for voice call recording
 * Audio tweaks, make volume slightly louder
 * Reserver 5MB of memory for gpu
+* Active smartass governor tweaks
 
 ------------
 v0.4
