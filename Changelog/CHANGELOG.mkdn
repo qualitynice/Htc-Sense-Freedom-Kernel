@@ -10,6 +10,7 @@ CHANGELOG
 v0.6
 
 * Added InteractiveX governor
+* Wireless 802.11n support
 
 ------------
 v0.5
