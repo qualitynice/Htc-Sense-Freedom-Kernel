@@ -7,6 +7,10 @@ Developers:
 
 CHANGELOG
 ------------
+a0.6
+* Fixed issue with interactiveX not scaling
+
+------------
 v0.6
 
 * Added InteractiveX governor
