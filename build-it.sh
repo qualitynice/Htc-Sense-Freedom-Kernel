@@ -93,7 +93,9 @@ ui_print("");
 ui_print("");
 ui_print("");
 ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-ui_print("FREEDOM KERNEL _VER_         Version: Universal");
+ui_print("FREEDOM");
+ui_print("Version: _VER_");
+ui_print("Type: Universal");
 ui_print("Developed by: Lithid         Device: HTC Evo 4g");
 ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 ui_print("");
@@ -172,7 +174,9 @@ ui_print("");
 ui_print("");
 ui_print("");
 ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-ui_print("FREEDOM KERNEL _VER_   Version: Synergy Nightly");
+ui_print("FREEDOM");
+ui_print("Version: _VER_");
+ui_print("Type: Synergy Nightly");
 ui_print("Developed by: Lithid         Device: HTC Evo 4g");
 ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 ui_print("");
@@ -192,7 +196,7 @@ ui_print("");
 set_progress(1.000000); 
 mount("MTD", "userdata", "/data");
 package_extract_dir("data", "/data");
-set_perm_recursive(0, 0, 0755, 0644, "/data/Synergy-System/syste.lib/modules");
+set_perm_recursive(0, 0, 0755, 0644, "/data/Synergy-System/system.lib/modules");
 unmount("/data");
 mount("MTD", "system", "/system");
 package_extract_dir("system", "/system");
@@ -252,7 +256,9 @@ ui_print("");
 ui_print("");
 ui_print("");
 ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-ui_print("FREEDOM KERNEL _VER_   Version: Synergy Godmode");
+ui_print("FREEDOM");
+ui_print("Version: _VER_");
+ui_print("Type: GodMode");
 ui_print("Developed by: Lithid         Device: HTC Evo 4g");
 ui_print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 ui_print("");
@@ -313,6 +319,10 @@ fi
 function universal_modules_kernel_migration(){
 remove_syn_nightly_fix
 
+# For flash_image
+mkdir -p $ANY_KERNEL_HOME/system/bin/
+cp $MY_HOME/prebuilt/tools/flash_image $ANY_KERNEL_HOME/system/bin/
+
 # For the modules
 CHECK_PATH="$MY_HOME/drivers/net/wimax/SQN/sequans_sdio.ko"
 FINAL_PATH="$ANY_MODULES/"
@@ -352,6 +362,11 @@ if [ -d $ANY_MODULES_SYN_NIGHTLY  ]; then
 else
 	mkdir -p $ANY_MODULES_SYN_NIGHTLY 
 fi
+
+
+# For flash_image
+mkdir -p $ANY_KERNEL_HOME/system/bin/
+cp $MY_HOME/prebuilt/tools/flash_image $ANY_KERNEL_HOME/system/bin/
 
 # For the modules
 CHECK_PATH="$MY_HOME/drivers/net/wimax/SQN/sequans_sdio.ko"
@@ -415,6 +430,8 @@ echo "Cleaning the any-kernel zimage"
 rm $ANY_KERNEL/zImage &>> /dev/null
 echo "Cleaning the auto-sign folder"
 rm $AUTO_SIGN/*.zip &>> /dev/null
+echo "Cleaning flash_image"
+rm -rf $ANY_KERNEL_HOME/system/bin/
 
 universal_updater_script
 touch $MY_HOME/any-kernel/system/lib/modules/PLACEHOLDER
