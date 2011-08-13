@@ -30,6 +30,8 @@
 #include "proc_comm.h"
 #include "clock.h"
 
+#include "board-supersonic.h"
+
 #if 0
 #define DEBUG(x...) pr_info(x)
 #else
@@ -103,6 +105,7 @@ struct clkctl_acpu_speed acpu_freq_tbl[] = {
         { 1228800, CCTL(CLK_TCXO, 1),		SRC_SCPLL, 0x20, 0, 1350, 128000 },
 	{ 0 },
 };
+
 static unsigned long max_axi_rate;
 
 /* select the standby clock that is used when switching scpll

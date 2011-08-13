@@ -1872,3 +1872,27 @@ config SUPPORT_DQ_BATTERY
 config PROC_COMM_7X30
 	bool "Enables PROC_COMM_7X30"
 	default n
+
+config FREEDOM_VERSION
+	bool "Stock HTC Voltages"
+	default y
+	help
+	    Stock HTC Voltages. Nothing Changed
+
+config LESS_FREEDOM_VERSION
+        bool "Less Voltages"
+        default n
+	help
+	    Stock HTC voltages dropped by 50
+
+config MORE_FREEDOM_VERSION
+	bool "More Voltages"
+        default n
+	help
+	    Stock HTC voltages dropped by 100
+
+config AGGRESSIVE_FREEDOM_VERSION
+	bool "Aggressive Voltages"
+	default n
+	help
+	    Stock HTC voltages dropped by 150
