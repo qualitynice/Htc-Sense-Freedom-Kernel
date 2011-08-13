@@ -234,12 +234,4 @@ config CPU_FREQ_GOV_INTERACTIVEX
 	help
 	  'interactiveX' - Modified version of interactive with sleep+wake code.
 
-config CPU_FREQ_VDD_LEVELS
-	bool "CPU Vdd levels sysfs interface"
-	depends on CPU_FREQ_STAT
-	depends on ARCH_QSD8X50
-	default n
-	help
-	  CPU Vdd levels sysfs interface
-
 endif	# CPU_FREQ
