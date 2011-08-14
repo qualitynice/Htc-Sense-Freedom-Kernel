@@ -7,6 +7,13 @@ Developers:
 
 CHANGELOG
 ------------
+v0.8
+
+* Removed Havs
+* Added SVS to builds
+* Created 4 versions, stock 0, less -50mv, more -100mv, aggressive -150mv
+
+------------
 v0.6
 
 * Added InteractiveX governor
