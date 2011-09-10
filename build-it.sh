@@ -337,6 +337,9 @@ mkdir -p $ANY_KERNEL_HOME/system/bin/
 cp $MY_HOME/prebuilt/tools/flash_image $ANY_KERNEL_HOME/system/bin/ &>> /dev/null
 
 # For the modules
+CHECK_PATH="$MY_HOME/drivers/net/tun.ko"
+FINAL_PATH="$ANY_MODULES/"
+check_finished_paths
 CHECK_PATH="$MY_HOME/drivers/net/wimax/SQN/sequans_sdio.ko"
 FINAL_PATH="$ANY_MODULES/"
 check_finished_paths
@@ -390,6 +393,9 @@ mkdir -p $ANY_KERNEL_HOME/system/bin/
 cp $MY_HOME/prebuilt/tools/flash_image $ANY_KERNEL_HOME/system/bin/
 
 # For the modules
+CHECK_PATH="$MY_HOME/drivers/net/tun.ko"
+FINAL_PATH="$ANY_MODULES_SYN_NIGHTLY/"
+check_finished_paths
 CHECK_PATH="$MY_HOME/drivers/net/wimax/SQN/sequans_sdio.ko"
 FINAL_PATH="$ANY_MODULES_SYN_NIGHTLY/"
 check_finished_paths
@@ -512,23 +518,34 @@ echo -n "What is this version number? > "
 read NUM
 }
 
+function the_basics_2(){
+if [ -f $PLACEHOLDER ]; then
+	rm $PLACEHOLDER
+fi
+}
 #################################################################
 # Start of the script 						#
 # This is written by lithid 					#
 #################################################################
 
-if [ "$1" = "--ALL" ]; then
+if [ "$1" = "-ALL" ]; then
 
 	the_basics
 	MY_CONFIG="freedom_supersonic_defconfig"
 	TITLE=""
 	progress_do
+
+	the_basics_2
 	MY_CONFIG="freedom-less_supersonic_defconfig"
 	TITLE="Less"
 	progress_do
+
+	the_basics_2
 	MY_CONFIG="freedom-more_supersonic_defconfig"
 	TITLE="More"
 	progress_do
+
+	the_basics_2
 	MY_CONFIG="freedom-aggressive_supersonic_defconfig"
 	TITLE="Aggressive"
 	progress_do
