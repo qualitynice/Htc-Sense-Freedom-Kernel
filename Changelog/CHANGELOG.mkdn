@@ -7,6 +7,16 @@ Developers:
 
 CHANGELOG
 ------------
+v0.9
+
+* Added HDMwIn port
+* Lowered Less, More, and Aggressive voltages by 25
+* Added TUN to kernel
+* Removed call recording
+* Tweaked the voltages for OC frequencies
+* Compass updates (barnacles10)
+
+------------
 v0.8
 
 * Removed Havs
