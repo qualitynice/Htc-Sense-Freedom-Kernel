@@ -29,7 +29,7 @@ v0.6
 * Added InteractiveX governor
 * Wireless 802.11n support
 * Wireless voltage tweaks
-* Hacky GPS bug fix. (WIP)
+* Hacky compass bug fix. (WIP)
 
 ------------
 v0.5
